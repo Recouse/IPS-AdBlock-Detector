@@ -1,0 +1,10 @@
+<ips:template parameters="" />
+{{if in_array( member.member_group_id, explode( ',', settings.adblockDetector_groups ) ) || settings.adblockDetector_groups == "*"}}
+	{{if settings.adblockDetector_message }}
+		<div class="ipsMessage ipsMessage_{setting="adblockDetector_messageType"} adblockDetectedMessage ipsHide" id="adBlockDetectedMessage" data-controller="core.adblock.detector">
+			<a href="#" data-action="closeMessage" class="ipsMessage_code ipsType_blendlinks ipsPos_right"><i class="fa fa-times"></i></a>
+			{{if settings.adblockDetector_enableHelpLink}}<a href="{setting="adblockDetector_helpLink"}" id="helpTopicLink" class="ipsMessage_code ipsType_blendlinks ipsPos_right" title="How disable adblock?" data-ipsTooltip><i class="fa fa-question"></i></a>{{endif}}
+			{lang="adblockDetector_messageTranslate"}
+		</div>
+	{{endif}}
+{{endif}}
